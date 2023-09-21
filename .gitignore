@@ -1,0 +1,5 @@
+.idea
+target/
+angular-frontend/.angular/
+angular-frontend/.vscode/
+angular-frontend/node_modules
