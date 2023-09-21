@@ -1,24 +1,26 @@
 <div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">description</th>
-            <th scope="col">patientName</th>
-            <th scope="col">startTime</th>
-            <th scope="col">patientName</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let appointment of appointments">
-            <td>{{ appointment.id }}</td>
-            <td>{{ appointment.description }}</td>
-            <td>{{ appointment.patientName }}</td>
-            <td>{{ appointment.startTime }}</td>
-            <td>{{ appointment.endTime }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">description</th>
+          <th scope="col">patientName</th>
+          <th scope="col">startTime</th>
+          <th scope="col">patientName</th>
+          <th scope="col">delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.id }}</td>
+          <td>{{ appointment.description }}</td>
+          <td>{{ appointment.patientName }}</td>
+          <td>{{ appointment.startTime }}</td>
+          <td>{{ appointment.endTime }}</td>
+          <td><button class="btn btn-danger" (click)="deleteAppointment(appointment.id)">X</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+</div>

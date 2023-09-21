@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
-import { AppointmentServiceService } from './service/appointment.service';
+import { AppointmentService } from './service/appointment.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AppointmentServiceService],
+  providers: [AppointmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,23 +5,29 @@ import { Appointment } from '../model/appointment';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class AppointmentServiceService {
+export class AppointmentService {
 
-  private appointmentsUrl: string;
+  private getAppointmentsUrl: string;
+  private saveAppointmentsUrl: string;
+  private deleteAppointmentsUrl: string;
 
   constructor(private http: HttpClient) {
-    this.appointmentsUrl = 'http://localhost:8080/api/appointments/get';
+    this.getAppointmentsUrl = 'http://localhost:8080/api/appointments/get';
+    this.saveAppointmentsUrl = 'http://localhost:8080/api/appointments/add';
+    this.deleteAppointmentsUrl = 'http://localhost:8080/api/appointments/delete/';
   }
 
   public findAll(): Observable<Appointment[]> {
-    return this.http.get<Appointment[]>(this.appointmentsUrl);
+    return this.http.get<Appointment[]>(this.getAppointmentsUrl);
   }
 
   public save(appointment: Appointment) {
-    return this.http.post<Appointment>(this.appointmentsUrl, appointment);
+    return this.http.post<Appointment>(this.saveAppointmentsUrl, appointment);
   }
 
-  public delete(appointment: Appointment){
-    return this.http.delete<Appointment>(this.appointmentsUrl);
+  public delete(appointmentID: number) {
+    var deleteURL: string = this.deleteAppointmentsUrl + appointmentID;
+    console.log("delete request has been send for url: " + deleteURL);
+    return this.http.delete(deleteURL);
   }
 }

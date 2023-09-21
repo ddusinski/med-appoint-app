@@ -16,7 +16,6 @@ public class Appointment {
 
     private String description;
     private String patientName;
-
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 

@@ -1,5 +1,5 @@
 export class Appointment {
-    id: string;
+    id: number;
     description: string;;
     patientName: string;;
     startTime: string;;
