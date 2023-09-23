@@ -1,0 +1,48 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #appointmentForm="ngForm">
+        <div class="form-group">
+          <label for="description">Appointment Description</label>
+          <input type="text" [(ngModel)]="appointment.description" 
+            class="form-control" 
+            id="description" 
+            name="description" 
+            placeholder="Enter your description"
+            required #description="ngModel">
+        </div>
+        <div [hidden]="!description.pristine" class="alert alert-danger">Description is required</div>
+        <div class="form-group">
+          <label for="patientName">Patient name</label>
+          <input type="text" [(ngModel)]="appointment.patientName" 
+            class="form-control" 
+            id="patientName" 
+            name="patientName" 
+            placeholder="Enter patient name"
+            required #patientName="ngModel">
+          <div [hidden]="!patientName.pristine" class="alert alert-danger">Patient name is required</div>
+        </div>
+        <div class="form-group">
+            <label for="startTime">Start time</label>
+            <input type="datetime-local" [(ngModel)]="appointment.startTime" 
+              class="form-control" 
+              id="startTime" 
+              name="startTime" 
+              placeholder="Enter start time"
+              required #startTime="ngModel">
+            <div [hidden]="!startTime.pristine" class="alert alert-danger">Start time is required</div>
+          </div>
+          <div class="form-group">
+            <label for="endTime">Start time</label>
+            <input type="datetime-local" [(ngModel)]="appointment.endTime" 
+              class="form-control" 
+              id="endTime" 
+              name="endTime" 
+              placeholder="Enter end time"
+              required #endTime="ngModel">
+            <div [hidden]="!endTime.pristine" class="alert alert-danger">End time is required</div>
+          </div>
+        <button type="submit" [disabled]="!appointmentForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

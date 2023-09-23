@@ -26,4 +26,9 @@ public class AppointmentController {
     public void deleteAppointment(@PathVariable Long id) {
         appointmentRepository.deleteById(id);
     }
+
+    @PostMapping("/add")
+    public void addAppointment(@RequestBody Appointment newAppointment) {
+        appointmentRepository.save(newAppointment);
+    }
 }

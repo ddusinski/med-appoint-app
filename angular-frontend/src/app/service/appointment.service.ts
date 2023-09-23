@@ -27,7 +27,6 @@ export class AppointmentService {
 
   public delete(appointmentID: number) {
     var deleteURL: string = this.deleteAppointmentsUrl + appointmentID;
-    console.log("delete request has been send for url: " + deleteURL);
     return this.http.delete(deleteURL);
   }
 }

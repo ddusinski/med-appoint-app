@@ -21,9 +21,7 @@ export class AppointmentListComponent implements OnInit {
   };
 
   deleteAppointment(id: number) {
-    console.log("delete button was clicked");
     this.appointmentService.delete(id).subscribe((data) => {
-      console.log("result: " + data);
       this.ngOnInit();
     });
     // this.appointments = this.appointments.filter(item => item.id != id);
