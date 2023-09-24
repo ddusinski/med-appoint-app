@@ -12,9 +12,9 @@ export class AppointmentService {
   private deleteAppointmentsUrl: string;
 
   constructor(private http: HttpClient) {
-    this.getAppointmentsUrl = 'http://localhost:8080/api/appointments/get';
-    this.saveAppointmentsUrl = 'http://localhost:8080/api/appointments/add';
-    this.deleteAppointmentsUrl = 'http://localhost:8080/api/appointments/delete/';
+    this.getAppointmentsUrl = 'http://51.20.25.134:8080/api/appointments/get';
+    this.saveAppointmentsUrl = 'http://51.20.25.134:8080/api/appointments/add';
+    this.deleteAppointmentsUrl = 'http://51.20.25.134:8080/api/appointments/delete/';
   }
 
   public findAll(): Observable<Appointment[]> {
